@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'add_std_bloc.dart';
+part of 'editstd_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,230 +15,59 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$AddStdEvent {
-  String get image => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String image) addphoto,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String image)? addphoto,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String image)? addphoto,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Addphoto value) addphoto,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Addphoto value)? addphoto,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Addphoto value)? addphoto,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $AddStdEventCopyWith<AddStdEvent> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AddStdEventCopyWith<$Res> {
-  factory $AddStdEventCopyWith(
-          AddStdEvent value, $Res Function(AddStdEvent) then) =
-      _$AddStdEventCopyWithImpl<$Res, AddStdEvent>;
-  @useResult
-  $Res call({String image});
-}
-
-/// @nodoc
-class _$AddStdEventCopyWithImpl<$Res, $Val extends AddStdEvent>
-    implements $AddStdEventCopyWith<$Res> {
-  _$AddStdEventCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? image = null,
-  }) {
-    return _then(_value.copyWith(
-      image: null == image
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$AddphotoCopyWith<$Res> implements $AddStdEventCopyWith<$Res> {
-  factory _$$AddphotoCopyWith(
-          _$Addphoto value, $Res Function(_$Addphoto) then) =
-      __$$AddphotoCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String image});
-}
-
-/// @nodoc
-class __$$AddphotoCopyWithImpl<$Res>
-    extends _$AddStdEventCopyWithImpl<$Res, _$Addphoto>
-    implements _$$AddphotoCopyWith<$Res> {
-  __$$AddphotoCopyWithImpl(_$Addphoto _value, $Res Function(_$Addphoto) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? image = null,
-  }) {
-    return _then(_$Addphoto(
-      image: null == image
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$Addphoto implements Addphoto {
-  const _$Addphoto({required this.image});
-
-  @override
-  final String image;
-
-  @override
-  String toString() {
-    return 'AddStdEvent.addphoto(image: $image)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$Addphoto &&
-            (identical(other.image, image) || other.image == image));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, image);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AddphotoCopyWith<_$Addphoto> get copyWith =>
-      __$$AddphotoCopyWithImpl<_$Addphoto>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String image) addphoto,
-  }) {
-    return addphoto(image);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(String image)? addphoto,
-  }) {
-    return addphoto?.call(image);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String image)? addphoto,
-    required TResult orElse(),
-  }) {
-    if (addphoto != null) {
-      return addphoto(image);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(Addphoto value) addphoto,
-  }) {
-    return addphoto(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(Addphoto value)? addphoto,
-  }) {
-    return addphoto?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(Addphoto value)? addphoto,
-    required TResult orElse(),
-  }) {
-    if (addphoto != null) {
-      return addphoto(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class Addphoto implements AddStdEvent {
-  const factory Addphoto({required final String image}) = _$Addphoto;
-
-  @override
-  String get image;
-  @override
-  @JsonKey(ignore: true)
-  _$$AddphotoCopyWith<_$Addphoto> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-mixin _$AddStdState {
+mixin _$EditstdEvent {
   String get photo => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String photo) updatedphoto,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String photo)? updatedphoto,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String photo)? updatedphoto,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Updatedphoto value) updatedphoto,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Updatedphoto value)? updatedphoto,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Updatedphoto value)? updatedphoto,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $AddStdStateCopyWith<AddStdState> get copyWith =>
+  $EditstdEventCopyWith<EditstdEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AddStdStateCopyWith<$Res> {
-  factory $AddStdStateCopyWith(
-          AddStdState value, $Res Function(AddStdState) then) =
-      _$AddStdStateCopyWithImpl<$Res, AddStdState>;
+abstract class $EditstdEventCopyWith<$Res> {
+  factory $EditstdEventCopyWith(
+          EditstdEvent value, $Res Function(EditstdEvent) then) =
+      _$EditstdEventCopyWithImpl<$Res, EditstdEvent>;
   @useResult
   $Res call({String photo});
 }
 
 /// @nodoc
-class _$AddStdStateCopyWithImpl<$Res, $Val extends AddStdState>
-    implements $AddStdStateCopyWith<$Res> {
-  _$AddStdStateCopyWithImpl(this._value, this._then);
+class _$EditstdEventCopyWithImpl<$Res, $Val extends EditstdEvent>
+    implements $EditstdEventCopyWith<$Res> {
+  _$EditstdEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -260,22 +89,22 @@ class _$AddStdStateCopyWithImpl<$Res, $Val extends AddStdState>
 }
 
 /// @nodoc
-abstract class _$$_AddStdStateCopyWith<$Res>
-    implements $AddStdStateCopyWith<$Res> {
-  factory _$$_AddStdStateCopyWith(
-          _$_AddStdState value, $Res Function(_$_AddStdState) then) =
-      __$$_AddStdStateCopyWithImpl<$Res>;
+abstract class _$$UpdatedphotoCopyWith<$Res>
+    implements $EditstdEventCopyWith<$Res> {
+  factory _$$UpdatedphotoCopyWith(
+          _$Updatedphoto value, $Res Function(_$Updatedphoto) then) =
+      __$$UpdatedphotoCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String photo});
 }
 
 /// @nodoc
-class __$$_AddStdStateCopyWithImpl<$Res>
-    extends _$AddStdStateCopyWithImpl<$Res, _$_AddStdState>
-    implements _$$_AddStdStateCopyWith<$Res> {
-  __$$_AddStdStateCopyWithImpl(
-      _$_AddStdState _value, $Res Function(_$_AddStdState) _then)
+class __$$UpdatedphotoCopyWithImpl<$Res>
+    extends _$EditstdEventCopyWithImpl<$Res, _$Updatedphoto>
+    implements _$$UpdatedphotoCopyWith<$Res> {
+  __$$UpdatedphotoCopyWithImpl(
+      _$Updatedphoto _value, $Res Function(_$Updatedphoto) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -283,30 +112,33 @@ class __$$_AddStdStateCopyWithImpl<$Res>
   $Res call({
     Object? photo = null,
   }) {
-    return _then(_$_AddStdState(
-      photo: null == photo ? _value.photo : photo as String,
+    return _then(_$Updatedphoto(
+      photo: null == photo
+          ? _value.photo
+          : photo // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_AddStdState implements _AddStdState {
-  const _$_AddStdState({required this.photo});
+class _$Updatedphoto implements Updatedphoto {
+  const _$Updatedphoto({required this.photo});
 
   @override
   final String photo;
 
   @override
   String toString() {
-    return 'AddStdState(photo: $photo)';
+    return 'EditstdEvent.updatedphoto(photo: $photo)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AddStdState &&
+            other is _$Updatedphoto &&
             (identical(other.photo, photo) || other.photo == photo));
   }
 
@@ -316,17 +148,190 @@ class _$_AddStdState implements _AddStdState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AddStdStateCopyWith<_$_AddStdState> get copyWith =>
-      __$$_AddStdStateCopyWithImpl<_$_AddStdState>(this, _$identity);
+  _$$UpdatedphotoCopyWith<_$Updatedphoto> get copyWith =>
+      __$$UpdatedphotoCopyWithImpl<_$Updatedphoto>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String photo) updatedphoto,
+  }) {
+    return updatedphoto(photo);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String photo)? updatedphoto,
+  }) {
+    return updatedphoto?.call(photo);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String photo)? updatedphoto,
+    required TResult orElse(),
+  }) {
+    if (updatedphoto != null) {
+      return updatedphoto(photo);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Updatedphoto value) updatedphoto,
+  }) {
+    return updatedphoto(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Updatedphoto value)? updatedphoto,
+  }) {
+    return updatedphoto?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Updatedphoto value)? updatedphoto,
+    required TResult orElse(),
+  }) {
+    if (updatedphoto != null) {
+      return updatedphoto(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class _AddStdState implements AddStdState {
-  const factory _AddStdState({required final String photo}) = _$_AddStdState;
+abstract class Updatedphoto implements EditstdEvent {
+  const factory Updatedphoto({required final String photo}) = _$Updatedphoto;
 
   @override
   String get photo;
   @override
   @JsonKey(ignore: true)
-  _$$_AddStdStateCopyWith<_$_AddStdState> get copyWith =>
+  _$$UpdatedphotoCopyWith<_$Updatedphoto> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$EditstdState {
+  String get photo => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $EditstdStateCopyWith<EditstdState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $EditstdStateCopyWith<$Res> {
+  factory $EditstdStateCopyWith(
+          EditstdState value, $Res Function(EditstdState) then) =
+      _$EditstdStateCopyWithImpl<$Res, EditstdState>;
+  @useResult
+  $Res call({String photo});
+}
+
+/// @nodoc
+class _$EditstdStateCopyWithImpl<$Res, $Val extends EditstdState>
+    implements $EditstdStateCopyWith<$Res> {
+  _$EditstdStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? photo = null,
+  }) {
+    return _then(_value.copyWith(
+      photo: null == photo
+          ? _value.photo
+          : photo // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_EditstdStateCopyWith<$Res>
+    implements $EditstdStateCopyWith<$Res> {
+  factory _$$_EditstdStateCopyWith(
+          _$_EditstdState value, $Res Function(_$_EditstdState) then) =
+      __$$_EditstdStateCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String photo});
+}
+
+/// @nodoc
+class __$$_EditstdStateCopyWithImpl<$Res>
+    extends _$EditstdStateCopyWithImpl<$Res, _$_EditstdState>
+    implements _$$_EditstdStateCopyWith<$Res> {
+  __$$_EditstdStateCopyWithImpl(
+      _$_EditstdState _value, $Res Function(_$_EditstdState) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? photo = null,
+  }) {
+    return _then(_$_EditstdState(
+      photo: null == photo
+          ? _value.photo
+          : photo // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_EditstdState implements _EditstdState {
+  const _$_EditstdState({required this.photo});
+
+  @override
+  final String photo;
+
+  @override
+  String toString() {
+    return 'EditstdState(photo: $photo)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_EditstdState &&
+            (identical(other.photo, photo) || other.photo == photo));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, photo);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_EditstdStateCopyWith<_$_EditstdState> get copyWith =>
+      __$$_EditstdStateCopyWithImpl<_$_EditstdState>(this, _$identity);
+}
+
+abstract class _EditstdState implements EditstdState {
+  const factory _EditstdState({required final String photo}) = _$_EditstdState;
+
+  @override
+  String get photo;
+  @override
+  @JsonKey(ignore: true)
+  _$$_EditstdStateCopyWith<_$_EditstdState> get copyWith =>
       throw _privateConstructorUsedError;
 }

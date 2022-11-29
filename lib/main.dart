@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_flutter/adapters.dart';
 
 import 'package:hive_sample/bloc%20functions/bloc/addstd/add_std_bloc.dart';
+import 'package:hive_sample/bloc%20functions/bloc/editstd/editstd_bloc.dart';
 import 'package:hive_sample/bloc%20functions/bloc/saerch/search_bloc.dart';
 import 'package:hive_sample/database/Functions/Modals/modals.dart';
 import 'package:hive_sample/screens/screen1.dart';
@@ -30,9 +31,12 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => SearchBloc(),
+        ),
+        BlocProvider(
+          create: (context) => EditstdBloc(),
         )
       ],
-      child: MaterialApp(
+      child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         home: FirstScreen(),
       ),

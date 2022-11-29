@@ -18,8 +18,8 @@ class FirstScreen extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.search),
             onPressed: () {
-              Navigator.of(context).push(
-                  MaterialPageRoute(builder: (ctx1) => const SearchSearch()));
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (ctx1) => SearchSearch()));
             },
           ),
         ],

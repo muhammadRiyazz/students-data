@@ -3,19 +3,15 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive_sample/bloc%20functions/bloc/addstd/add_std_bloc.dart';
+import 'package:hive_sample/bloc%20functions/bloc/editstd/editstd_bloc.dart';
 import 'package:hive_sample/database/Functions/Modals/modals.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../database/Functions/functons_db.dart';
 
-class ScreenTwo extends StatefulWidget {
+class ScreenTwo extends StatelessWidget {
   ScreenTwo({super.key});
 
-  @override
-  State<ScreenTwo> createState() => _ScreenTwoState();
-}
-
-class _ScreenTwoState extends State<ScreenTwo> {
   String? imagefile;
 
   final _namecontroler = TextEditingController();
@@ -25,9 +21,11 @@ class _ScreenTwoState extends State<ScreenTwo> {
   final _emailcontroler = TextEditingController();
 
   final _numbercontroler = TextEditingController();
+
   final _formkey = GlobalKey<FormState>();
 
-  void addimage({required ImageSource imgsource}) async {
+  void addimage(
+      {required ImageSource imgsource, required BuildContext context}) async {
     final file = await ImagePicker().pickImage(source: imgsource);
 
     if (file == null) {
@@ -62,12 +60,13 @@ class _ScreenTwoState extends State<ScreenTwo> {
                   builder: (context, state) {
                     return CircleAvatar(
                       backgroundImage: (imagefile == null)
-                          ? const AssetImage('')
+                          ? const AssetImage('asset/img/avatarr.jpg')
                           : FileImage(File(state.photo)) as ImageProvider,
                       radius: 90,
                       child: IconButton(
                         onPressed: () {
-                          addimage(imgsource: ImageSource.gallery);
+                          addimage(
+                              imgsource: ImageSource.gallery, context: context);
                         },
                         icon: const Icon(
                           Icons.add_a_photo_outlined,
@@ -204,9 +203,12 @@ class _ScreenTwoState extends State<ScreenTwo> {
         _agecontroler.clear();
         _emailcontroler.clear();
         _numbercontroler.clear();
-        setState(() {
-          imagefile = null;
-        });
+        imagefile = null;
+        BlocProvider.of<AddStdBloc>(context).add(Addphoto(image: imagefile!));
+
+        // setState(() {
+        //   imagefile = null;
+        // });
       },
     );
 

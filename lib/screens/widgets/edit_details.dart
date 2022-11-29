@@ -1,49 +1,50 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive_sample/bloc%20functions/bloc/editstd/editstd_bloc.dart';
 import 'package:hive_sample/database/Functions/Modals/modals.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../database/Functions/functons_db.dart';
 import '../screen1.dart';
 
-class Editpage extends StatefulWidget {
-  const Editpage({super.key, required this.stddata});
+class Editpage extends StatelessWidget {
+  Editpage({super.key, required this.stddata});
   final StdModal stddata;
 
-  @override
-  State<Editpage> createState() => _EditpageState();
-}
-
-class _EditpageState extends State<Editpage> {
-  void addimage({required ImageSource imgsource}) async {
-    // ignore: unused_local_variable
-    final file = await ImagePicker().pickImage(source: imgsource);
-
-    setState(() {
-      imagefile = file!.path;
-    });
-  }
-
   TextEditingController? _namecontroler;
+
   TextEditingController? _agecontroler;
+
   TextEditingController? _emailcontroler;
+
   TextEditingController? _numbercontroler;
 
-  @override
-  void initState() {
-    _namecontroler = TextEditingController(text: widget.stddata.name);
-    _agecontroler = TextEditingController(text: widget.stddata.age);
-    _emailcontroler = TextEditingController(text: widget.stddata.email);
-    _numbercontroler = TextEditingController(text: widget.stddata.number);
-    imagefile = widget.stddata.photo;
-    super.initState();
+  String? imagefile;
+
+  void myinitState() {
+    _namecontroler = TextEditingController(text: stddata.name);
+    _agecontroler = TextEditingController(text: stddata.age);
+    _emailcontroler = TextEditingController(text: stddata.email);
+    _numbercontroler = TextEditingController(text: stddata.number);
+    imagefile = stddata.photo;
   }
 
-  String? imagefile;
+  void addimage(
+      {required ImageSource imgsource, required BuildContext context}) async {
+    final file = await ImagePicker().pickImage(source: imgsource);
+    imagefile = file!.path;
+    BlocProvider.of<EditstdBloc>(context).add(Updatedphoto(photo: imagefile!));
+  }
+
   final _formkey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
+    myinitState();
+    BlocProvider.of<EditstdBloc>(context).add(Updatedphoto(photo: imagefile!));
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Edit Details'),
@@ -61,27 +62,30 @@ class _EditpageState extends State<Editpage> {
                 const SizedBox(
                   height: 40,
                 ),
-                CircleAvatar(
-                  backgroundImage: (imagefile == null)
-                      ? AssetImage('asset/img/avatarr.jpg')
-                      : FileImage(File(imagefile!)) as ImageProvider,
-                  radius: 70,
-                  child: IconButton(
-                    onPressed: () {
-                      // var snackBar = SnackBar(
-                      //   content: Text('ssssss'),
-                      //   action: SnackBarAction(
-                      //     label: 'Undo',
-                      //     onPressed: () {},
-                      //   ),
-                      // );
-                      // ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                      addimage(imgsource: ImageSource.gallery);
-                    },
-                    icon: const Icon(
-                      Icons.add_a_photo_outlined,
-                    ),
-                  ),
+                BlocBuilder<EditstdBloc, EditstdState>(
+                  builder: (context, state) {
+                    return CircleAvatar(
+                      backgroundImage: FileImage(File(state.photo)),
+                      radius: 70,
+                      child: IconButton(
+                        onPressed: () {
+                          // var snackBar = SnackBar(
+                          //   content: Text('ssssss'),
+                          //   action: SnackBarAction(
+                          //     label: 'Undo',
+                          //     onPressed: () {},
+                          //   ),
+                          // );
+                          // ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                          addimage(
+                              imgsource: ImageSource.gallery, context: context);
+                        },
+                        icon: const Icon(
+                          Icons.add_a_photo_outlined,
+                        ),
+                      ),
+                    );
+                  },
                 ),
                 textField(
                   validatertext: 'Name',
@@ -185,9 +189,10 @@ class _EditpageState extends State<Editpage> {
     _agecontroler!.clear();
     _emailcontroler!.clear();
     _numbercontroler!.clear();
-    setState(() {
-      imagefile = null;
-    });
+    // setState(
+    //   () {
+    //     imagefile = null;
+    //   },
   }
 
   void submitalert(BuildContext context) {
@@ -200,7 +205,7 @@ class _EditpageState extends State<Editpage> {
     Widget continueButton = TextButton(
       child: const Text("Yes"),
       onPressed: () async {
-        submitclick(widget.stddata.key);
+        submitclick(stddata.key);
         Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(builder: (ctx1) => FirstScreen()),
             (route) => false);

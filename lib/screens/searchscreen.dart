@@ -9,15 +9,11 @@ import 'package:hive_sample/bloc%20functions/bloc/saerch/search_bloc.dart';
 import 'package:hive_sample/database/Functions/Modals/modals.dart';
 import 'package:hive_sample/screens/details_screen.dart';
 
-class SearchSearch extends StatefulWidget {
-  const SearchSearch({super.key});
+class SearchSearch extends StatelessWidget {
+  SearchSearch({super.key});
 
-  @override
-  State<SearchSearch> createState() => _SearchSearchState();
-}
-
-class _SearchSearchState extends State<SearchSearch> {
   final _srchcontroler = TextEditingController();
+
   final List<StdModal> students =
       Hive.box<StdModal>("std_database").values.toList();
 
@@ -94,16 +90,4 @@ class _SearchSearchState extends State<SearchSearch> {
       ),
     );
   }
-
-  // void searchName(String value) {
-  //   setState(() {
-  //     search_students = students
-  //         .where(
-  //           (element) => element.name.toLowerCase().contains(
-  //                 value.toLowerCase(),
-  //               ),
-  //         )
-  //         .toList();
-  //   });
-  // }
 }
