@@ -14,18 +14,24 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
     on<Search>((event, emit) {
       final List<StdModal> students =
           Hive.box<StdModal>("std_database").values.toList();
-      late List<StdModal> search_students = List.from(students);
+      late List<StdModal> searchStudents = List.from(students);
 
-      search_students = students
+      searchStudents = students
           .where(
             (element) => element.name.toLowerCase().contains(
                   event.searchtext.toLowerCase(),
                 ),
           )
           .toList();
-      emit(SearchState(studendlist: search_students));
-      log('search');
-      log(search_students.length.toString());
+      emit(SearchState(studendlist: searchStudents));
+      // log('search');
+      // log(searchStudents.length.toString());
+    });
+    on<Firstsearch>((event, emit) {
+      final List<StdModal> students =
+          Hive.box<StdModal>("std_database").values.toList();
+
+      emit(SearchState(studendlist: students));
     });
   }
 }

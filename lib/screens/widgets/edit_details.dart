@@ -35,6 +35,7 @@ class Editpage extends StatelessWidget {
       {required ImageSource imgsource, required BuildContext context}) async {
     final file = await ImagePicker().pickImage(source: imgsource);
     imagefile = file!.path;
+
     BlocProvider.of<EditstdBloc>(context).add(Updatedphoto(photo: imagefile!));
   }
 

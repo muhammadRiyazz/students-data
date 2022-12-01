@@ -21,6 +21,9 @@ class SearchSearch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      BlocProvider.of<SearchBloc>(context).add(SearchEvent.firstsearch());
+    });
     return Scaffold(
       appBar: AppBar(
         title: const Text('Search Screen'),
